@@ -7,12 +7,12 @@ def get_section_points(section_from, section_to):
             points.add((x, y))
     return points
 
-def get_set_bounds(point_set):
+def get_set_bounds(point_set: set):
     x_values = [x for x, y in point_set]
     y_values = [y for x, y in point_set]
     return min(x_values), min(y_values), max(x_values), max(y_values)
 
-def import_rock_structures(rock_structures):
+def import_rock_structures(rock_structures: list):
     rock_set = set()
     for rock_structure in rock_structures:
         sections = list(map(lambda x: tuple(map(int, x.split(','))), rock_structure.split(' -> ')))
